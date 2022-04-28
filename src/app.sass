@@ -1,0 +1,31 @@
+@import '../../sassis/dist/defaults'
+@import './_theme'
+@import '../../sassis/src/sassis'
+
++sassis
++shorthand
++layout
+
+main  
+	.logo
+		+p(2em)
+		+rel
+	.outline
+		+border(calc(var(--svg-stroke)/10))
+		box-sizing: content-box
+		.container
+			+rel
+			+overflow-hidden
+			.svg
+				+mt(0px)
+				+ml(-100px)
+				+abs
+				+t(0)
+				+l(0)
+				+w(1000px)
+				+h(1000px)
+				g
+					+none
+				path, rect
+					stroke: var(--color)!important
+					stroke-width: var(--svg-stroke)!important
