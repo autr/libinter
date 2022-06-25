@@ -117,6 +117,9 @@
   --media-elg: 1200px; }
 
 /* core sassis */
+.hello {
+  border: 10px solid red; }
+
 html {
   font-size: var(--font-size); }
 
@@ -291,8 +294,8 @@ input[type=range] {
   position: relative; }
 
 .checkbox input + span, .radio input + span {
-  width: 1em;
-  height: 1em;
+  width: var(--radio-checkbox-size);
+  height: var(--radio-checkbox-size);
   position: relative;
   display: flex; }
 
@@ -880,13 +883,13 @@ input[type=range]::-webkit-slider-thumb {
   .checkbox input + span:before, .checkbox input + span:after {
     border-color: var(--color); }
 
-.radio input:checked + span {
+.radio input:checked + span, .checkbox input:checked + span {
   background-color: var(--color); }
 
 .select:after, .chevron:after {
   border-color: var(--color); }
 
-.cross, .checkbox input:checked + span {
+.cross, .checkbox-cross input:checked + span, .radio-cross input:checked + span {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick {
@@ -962,13 +965,13 @@ input[type=range].normal::-webkit-slider-thumb, input[type=range].color::-webkit
 .checkbox input + span:before.normal, .checkbox input + span:before.color, .checkbox input + span:before.sassis, .checkbox input + span:after.normal, .checkbox input + span:after.color, .checkbox input + span:after.sassis {
   border-color: var(--color); }
 
-.radio input:checked + span.normal, .radio input:checked + span.color, .radio input:checked + span.sassis {
+.radio input:checked + span.normal, .radio input:checked + span.color, .radio input:checked + span.sassis, .checkbox input:checked + span.normal, .checkbox input:checked + span.color, .checkbox input:checked + span.sassis {
   background-color: var(--color); }
 
 .select:after.normal, .select:after.color, .select:after.sassis, .chevron:after.normal, .chevron:after.color, .chevron:after.sassis {
   border-color: var(--color); }
 
-.cross.normal, .cross.color, .cross.sassis, .checkbox input:checked + span.normal, .checkbox input:checked + span.color, .checkbox input:checked + span.sassis {
+.cross.normal, .cross.color, .cross.sassis, .checkbox-cross input:checked + span.normal, .checkbox-cross input:checked + span.color, .checkbox-cross input:checked + span.sassis, .radio-cross input:checked + span.normal, .radio-cross input:checked + span.color, .radio-cross input:checked + span.sassis {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.normal, .tick.color, .tick.sassis {
@@ -1058,13 +1061,13 @@ input[type=range].inverted::-webkit-slider-thumb {
 .checkbox input + span:before.inverted, .checkbox input + span:after.inverted {
   border-color: var(--bg); }
 
-.radio input:checked + span.inverted {
+.radio input:checked + span.inverted, .checkbox input:checked + span.inverted {
   background-color: var(--bg); }
 
 .select:after.inverted, .chevron:after.inverted {
   border-color: var(--bg); }
 
-.cross.inverted, .checkbox input:checked + span.inverted {
+.cross.inverted, .checkbox-cross input:checked + span.inverted, .radio-cross input:checked + span.inverted {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--bg) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--bg) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.inverted {
@@ -1154,13 +1157,13 @@ input[type=range].strong::-webkit-slider-thumb, input[type=range].highlight::-we
 .checkbox input + span:before.strong, .checkbox input + span:before.highlight, .checkbox input + span:before.bright, .checkbox input + span:before.focus, .checkbox input + span:after.strong, .checkbox input + span:after.highlight, .checkbox input + span:after.bright, .checkbox input + span:after.focus {
   border-color: var(--color-bright); }
 
-.radio input:checked + span.strong, .radio input:checked + span.highlight, .radio input:checked + span.bright, .radio input:checked + span.focus {
+.radio input:checked + span.strong, .radio input:checked + span.highlight, .radio input:checked + span.bright, .radio input:checked + span.focus, .checkbox input:checked + span.strong, .checkbox input:checked + span.highlight, .checkbox input:checked + span.bright, .checkbox input:checked + span.focus {
   background-color: var(--color-bright); }
 
 .select:after.strong, .select:after.highlight, .select:after.bright, .select:after.focus, .chevron:after.strong, .chevron:after.highlight, .chevron:after.bright, .chevron:after.focus {
   border-color: var(--color-bright); }
 
-.cross.strong, .cross.highlight, .cross.bright, .cross.focus, .checkbox input:checked + span.strong, .checkbox input:checked + span.highlight, .checkbox input:checked + span.bright, .checkbox input:checked + span.focus {
+.cross.strong, .cross.highlight, .cross.bright, .cross.focus, .checkbox-cross input:checked + span.strong, .checkbox-cross input:checked + span.highlight, .checkbox-cross input:checked + span.bright, .checkbox-cross input:checked + span.focus, .radio-cross input:checked + span.strong, .radio-cross input:checked + span.highlight, .radio-cross input:checked + span.bright, .radio-cross input:checked + span.focus {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-bright) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-bright) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.strong, .tick.highlight, .tick.bright, .tick.focus {
@@ -1250,13 +1253,13 @@ input[type=range].fade::-webkit-slider-thumb, input[type=range].disabled::-webki
 .checkbox input + span:before.fade, .checkbox input + span:before.disabled, .checkbox input + span:before.unimportant, .checkbox input + span:after.fade, .checkbox input + span:after.disabled, .checkbox input + span:after.unimportant {
   border-color: var(--color-fade); }
 
-.radio input:checked + span.fade, .radio input:checked + span.disabled, .radio input:checked + span.unimportant {
+.radio input:checked + span.fade, .radio input:checked + span.disabled, .radio input:checked + span.unimportant, .checkbox input:checked + span.fade, .checkbox input:checked + span.disabled, .checkbox input:checked + span.unimportant {
   background-color: var(--color-fade); }
 
 .select:after.fade, .select:after.disabled, .select:after.unimportant, .chevron:after.fade, .chevron:after.disabled, .chevron:after.unimportant {
   border-color: var(--color-fade); }
 
-.cross.fade, .cross.disabled, .cross.unimportant, .checkbox input:checked + span.fade, .checkbox input:checked + span.disabled, .checkbox input:checked + span.unimportant {
+.cross.fade, .cross.disabled, .cross.unimportant, .checkbox-cross input:checked + span.fade, .checkbox-cross input:checked + span.disabled, .checkbox-cross input:checked + span.unimportant, .radio-cross input:checked + span.fade, .radio-cross input:checked + span.disabled, .radio-cross input:checked + span.unimportant {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-fade) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-fade) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.fade, .tick.disabled, .tick.unimportant {
@@ -1351,13 +1354,13 @@ input[type=range].success::-webkit-slider-thumb, input[type=range].selected::-we
 .checkbox input + span:before.success, .checkbox input + span:before.selected, .checkbox input + span:before.added, .checkbox input + span:before.new, .checkbox input + span:before.created, .checkbox input + span:before.create, .checkbox input + span:before.add, .checkbox input + span:after.success, .checkbox input + span:after.selected, .checkbox input + span:after.added, .checkbox input + span:after.new, .checkbox input + span:after.created, .checkbox input + span:after.create, .checkbox input + span:after.add {
   border-color: var(--color-success); }
 
-.radio input:checked + span.success, .radio input:checked + span.selected, .radio input:checked + span.added, .radio input:checked + span.new, .radio input:checked + span.created, .radio input:checked + span.create, .radio input:checked + span.add {
+.radio input:checked + span.success, .radio input:checked + span.selected, .radio input:checked + span.added, .radio input:checked + span.new, .radio input:checked + span.created, .radio input:checked + span.create, .radio input:checked + span.add, .checkbox input:checked + span.success, .checkbox input:checked + span.selected, .checkbox input:checked + span.added, .checkbox input:checked + span.new, .checkbox input:checked + span.created, .checkbox input:checked + span.create, .checkbox input:checked + span.add {
   background-color: var(--color-success); }
 
 .select:after.success, .select:after.selected, .select:after.added, .select:after.new, .select:after.created, .select:after.create, .select:after.add, .chevron:after.success, .chevron:after.selected, .chevron:after.added, .chevron:after.new, .chevron:after.created, .chevron:after.create, .chevron:after.add {
   border-color: var(--color-success); }
 
-.cross.success, .cross.selected, .cross.added, .cross.new, .cross.created, .cross.create, .cross.add, .checkbox input:checked + span.success, .checkbox input:checked + span.selected, .checkbox input:checked + span.added, .checkbox input:checked + span.new, .checkbox input:checked + span.created, .checkbox input:checked + span.create, .checkbox input:checked + span.add {
+.cross.success, .cross.selected, .cross.added, .cross.new, .cross.created, .cross.create, .cross.add, .checkbox-cross input:checked + span.success, .checkbox-cross input:checked + span.selected, .checkbox-cross input:checked + span.added, .checkbox-cross input:checked + span.new, .checkbox-cross input:checked + span.created, .checkbox-cross input:checked + span.create, .checkbox-cross input:checked + span.add, .radio-cross input:checked + span.success, .radio-cross input:checked + span.selected, .radio-cross input:checked + span.added, .radio-cross input:checked + span.new, .radio-cross input:checked + span.created, .radio-cross input:checked + span.create, .radio-cross input:checked + span.add {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-success) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-success) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.success, .tick.selected, .tick.added, .tick.new, .tick.created, .tick.create, .tick.add {
@@ -1447,13 +1450,13 @@ input[type=range].info::-webkit-slider-thumb, input[type=range].ok::-webkit-slid
 .checkbox input + span:before.info, .checkbox input + span:before.ok, .checkbox input + span:before.placid, .checkbox input + span:after.info, .checkbox input + span:after.ok, .checkbox input + span:after.placid {
   border-color: var(--color-info); }
 
-.radio input:checked + span.info, .radio input:checked + span.ok, .radio input:checked + span.placid {
+.radio input:checked + span.info, .radio input:checked + span.ok, .radio input:checked + span.placid, .checkbox input:checked + span.info, .checkbox input:checked + span.ok, .checkbox input:checked + span.placid {
   background-color: var(--color-info); }
 
 .select:after.info, .select:after.ok, .select:after.placid, .chevron:after.info, .chevron:after.ok, .chevron:after.placid {
   border-color: var(--color-info); }
 
-.cross.info, .cross.ok, .cross.placid, .checkbox input:checked + span.info, .checkbox input:checked + span.ok, .checkbox input:checked + span.placid {
+.cross.info, .cross.ok, .cross.placid, .checkbox-cross input:checked + span.info, .checkbox-cross input:checked + span.ok, .checkbox-cross input:checked + span.placid, .radio-cross input:checked + span.info, .radio-cross input:checked + span.ok, .radio-cross input:checked + span.placid {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-info) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-info) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.info, .tick.ok, .tick.placid {
@@ -1543,13 +1546,13 @@ input[type=range].error::-webkit-slider-thumb, input[type=range].unselected::-we
 .checkbox input + span:before.error, .checkbox input + span:before.unselected, .checkbox input + span:before.removed, .checkbox input + span:before.deleted, .checkbox input + span:before.remove, .checkbox input + span:before.delete, .checkbox input + span:after.error, .checkbox input + span:after.unselected, .checkbox input + span:after.removed, .checkbox input + span:after.deleted, .checkbox input + span:after.remove, .checkbox input + span:after.delete {
   border-color: var(--color-error); }
 
-.radio input:checked + span.error, .radio input:checked + span.unselected, .radio input:checked + span.removed, .radio input:checked + span.deleted, .radio input:checked + span.remove, .radio input:checked + span.delete {
+.radio input:checked + span.error, .radio input:checked + span.unselected, .radio input:checked + span.removed, .radio input:checked + span.deleted, .radio input:checked + span.remove, .radio input:checked + span.delete, .checkbox input:checked + span.error, .checkbox input:checked + span.unselected, .checkbox input:checked + span.removed, .checkbox input:checked + span.deleted, .checkbox input:checked + span.remove, .checkbox input:checked + span.delete {
   background-color: var(--color-error); }
 
 .select:after.error, .select:after.unselected, .select:after.removed, .select:after.deleted, .select:after.remove, .select:after.delete, .chevron:after.error, .chevron:after.unselected, .chevron:after.removed, .chevron:after.deleted, .chevron:after.remove, .chevron:after.delete {
   border-color: var(--color-error); }
 
-.cross.error, .cross.unselected, .cross.removed, .cross.deleted, .cross.remove, .cross.delete, .checkbox input:checked + span.error, .checkbox input:checked + span.unselected, .checkbox input:checked + span.removed, .checkbox input:checked + span.deleted, .checkbox input:checked + span.remove, .checkbox input:checked + span.delete {
+.cross.error, .cross.unselected, .cross.removed, .cross.deleted, .cross.remove, .cross.delete, .checkbox-cross input:checked + span.error, .checkbox-cross input:checked + span.unselected, .checkbox-cross input:checked + span.removed, .checkbox-cross input:checked + span.deleted, .checkbox-cross input:checked + span.remove, .checkbox-cross input:checked + span.delete, .radio-cross input:checked + span.error, .radio-cross input:checked + span.unselected, .radio-cross input:checked + span.removed, .radio-cross input:checked + span.deleted, .radio-cross input:checked + span.remove, .radio-cross input:checked + span.delete {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-error) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-error) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.error, .tick.unselected, .tick.removed, .tick.deleted, .tick.remove, .tick.delete {
@@ -1639,13 +1642,13 @@ input[type=range].alert::-webkit-slider-thumb, input[type=range].warning::-webki
 .checkbox input + span:before.alert, .checkbox input + span:before.warning, .checkbox input + span:after.alert, .checkbox input + span:after.warning {
   border-color: var(--color-alert); }
 
-.radio input:checked + span.alert, .radio input:checked + span.warning {
+.radio input:checked + span.alert, .radio input:checked + span.warning, .checkbox input:checked + span.alert, .checkbox input:checked + span.warning {
   background-color: var(--color-alert); }
 
 .select:after.alert, .select:after.warning, .chevron:after.alert, .chevron:after.warning {
   border-color: var(--color-alert); }
 
-.cross.alert, .cross.warning, .checkbox input:checked + span.alert, .checkbox input:checked + span.warning {
+.cross.alert, .cross.warning, .checkbox-cross input:checked + span.alert, .checkbox-cross input:checked + span.warning, .radio-cross input:checked + span.alert, .radio-cross input:checked + span.warning {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-alert) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-alert) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.alert, .tick.warning {
@@ -1739,13 +1742,13 @@ input[type=range].color-a::-webkit-slider-thumb {
 .checkbox input + span:before.color-a, .checkbox input + span:after.color-a {
   border-color: var(--color-a); }
 
-.radio input:checked + span.color-a {
+.radio input:checked + span.color-a, .checkbox input:checked + span.color-a {
   background-color: var(--color-a); }
 
 .select:after.color-a, .chevron:after.color-a {
   border-color: var(--color-a); }
 
-.cross.color-a, .checkbox input:checked + span.color-a {
+.cross.color-a, .checkbox-cross input:checked + span.color-a, .radio-cross input:checked + span.color-a {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-a) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-a) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.color-a {
@@ -1838,13 +1841,13 @@ input[type=range].color-b::-webkit-slider-thumb {
 .checkbox input + span:before.color-b, .checkbox input + span:after.color-b {
   border-color: var(--color-b); }
 
-.radio input:checked + span.color-b {
+.radio input:checked + span.color-b, .checkbox input:checked + span.color-b {
   background-color: var(--color-b); }
 
 .select:after.color-b, .chevron:after.color-b {
   border-color: var(--color-b); }
 
-.cross.color-b, .checkbox input:checked + span.color-b {
+.cross.color-b, .checkbox-cross input:checked + span.color-b, .radio-cross input:checked + span.color-b {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-b) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-b) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.color-b {
@@ -1937,13 +1940,13 @@ input[type=range].color-c::-webkit-slider-thumb {
 .checkbox input + span:before.color-c, .checkbox input + span:after.color-c {
   border-color: var(--color-c); }
 
-.radio input:checked + span.color-c {
+.radio input:checked + span.color-c, .checkbox input:checked + span.color-c {
   background-color: var(--color-c); }
 
 .select:after.color-c, .chevron:after.color-c {
   border-color: var(--color-c); }
 
-.cross.color-c, .checkbox input:checked + span.color-c {
+.cross.color-c, .checkbox-cross input:checked + span.color-c, .radio-cross input:checked + span.color-c {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-c) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-c) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.color-c {
@@ -2036,13 +2039,13 @@ input[type=range].color-d::-webkit-slider-thumb {
 .checkbox input + span:before.color-d, .checkbox input + span:after.color-d {
   border-color: var(--color-d); }
 
-.radio input:checked + span.color-d {
+.radio input:checked + span.color-d, .checkbox input:checked + span.color-d {
   background-color: var(--color-d); }
 
 .select:after.color-d, .chevron:after.color-d {
   border-color: var(--color-d); }
 
-.cross.color-d, .checkbox input:checked + span.color-d {
+.cross.color-d, .checkbox-cross input:checked + span.color-d, .radio-cross input:checked + span.color-d {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-d) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-d) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.color-d {
@@ -2135,13 +2138,13 @@ input[type=range].color-e::-webkit-slider-thumb {
 .checkbox input + span:before.color-e, .checkbox input + span:after.color-e {
   border-color: var(--color-e); }
 
-.radio input:checked + span.color-e {
+.radio input:checked + span.color-e, .checkbox input:checked + span.color-e {
   background-color: var(--color-e); }
 
 .select:after.color-e, .chevron:after.color-e {
   border-color: var(--color-e); }
 
-.cross.color-e, .checkbox input:checked + span.color-e {
+.cross.color-e, .checkbox-cross input:checked + span.color-e, .radio-cross input:checked + span.color-e {
   background-image: linear-gradient(to top left, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-e) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%), linear-gradient(to top right, transparent 0%, transparent calc(50% - var(--stroke-width)), var(--color-e) 50%, transparent calc(50% + var(--stroke-width)), transparent 100%); }
 
 .tick.color-e {

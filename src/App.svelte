@@ -29,18 +29,17 @@
 	$: ypos = ((y+1) * -10)
 
 	let x = 0
-	let y = 1
-	let padding = 0
-	let skew = 0
-	let radius = 4
-	let corners = [false,false,false,false]
+	let y = 0
+	let padding = 2
+	let skew = 10
+	let radius = 10
+	let corners = [true,false,true,false]
 	let names = ['TL','TR','BL','BR']
-	let stroke = 40
+	let stroke = 32
 
 	$: radiuses = ( (_corners,_radius) => {
 		let str = ''
 		for(const b of corners) str += b ? radius + 'px ' : '0px '
-		console.log(str)
 		return str
 
 	})(corners,radius)
@@ -82,7 +81,7 @@
 			y
 		}
 		try {
-			window.location.hash = JSON.stringify(all)
+			// window.location.hash = JSON.stringify(all)
 		} catch(err) { 
 			console.error(err)
 		}
@@ -93,13 +92,22 @@
 		window.location.reload()
 	}
 
+	let showUI = false
+
+	function onKeydown(e) {
+		if (e.key == 'Tab') showUI = !showUI
+	}
+
 </script>
 
+<svelte:window on:keydown={onKeydown} />
 <main 
 	class="sassis fill overflow-auto flex bold uppercase"
 	style="--svg-stroke: {stroke}px">
 
-	<nav class="flex column bg z-index99 rel w10em">
+	<nav 
+		class="flex column bg z-index99 rel w10em"
+		class:none={!showUI}>
 		<button 
 			on:click={reset}
 			class="m0-5 p1 uppercase f0 bold">
@@ -175,20 +183,22 @@
 				bind:value={stroke} />
 		</div>
 	</nav>
-	<div class="logo w100pc flex row-center-center">
-		<div 
-			style="padding:{padding}px;transform:skew({-skew}deg,0deg);border-radius:{radiuses}"
-			class="outline">
-			<div 
+	<a 
+		href="mailto:g@sinnott.cc"
+		class="logo w100pc flex row-center-center">
+		<span 
+			style="padding:{padding}px;transform:skew({-skew}deg,0deg) scale(2);border-radius:{radiuses}"
+			class="outline mb10 block">
+			<span 
 				style="width:{widths[x]}px;height:{heights[x]}px;"
-				class="container">
-				<div 
-					class="svg"
+				class="container block">
+				<span 
+					class="svg block"
 					style="transform: translate({xpos}%, {ypos}%)"
 					>
 					<InlineSVG src="liberatedinterfaces.svg" />
-				</div>
-			</div>
-		</div>
-	</div>
+				</span>
+			</span>
+		</span>
+	</a>
 </main>
