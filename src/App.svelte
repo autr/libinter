@@ -83,9 +83,18 @@
 			<h2>Contact</h2>
 
         
-			<p>
-				<a href="mailto:libinter.dev@gmail.com">libinter.dev@gmail.com</a>
-			</p>
+			<ul class="cmb0-5">
+				<li>
+					<a href="mailto:libinter.dev@gmail.com">libinter.dev@gmail.com</a>
+				</li>
+			</ul>
+
+			<h2>Links</h2>
+			<ul>
+				<li>@
+					<a href="https://instagram.com/liberatedinterfaces">liberatedinterfaces</a>
+				</li>
+			</ul>
 		</article>
 	</div>
 
