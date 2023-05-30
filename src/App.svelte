@@ -35,12 +35,12 @@
 			<h2>News</h2>
 
 			<ul class="cmb0-5">
-				<li>⦿
+				<li>❂&nbsp;
 					<a href="https://re-publica.com/de/session/video-feedback-still-life">
 						Video Feedback Still Life at re:publica 2023
 					</a>
 				</li>
-				<li>⦿
+				<li>❂&nbsp;
 					<a href="https://betterfactory.eu/better-factory-partners-and-mentors-visit-the-new-round-of-kte-teams-across-europe/">
 						StarIOT, Better Factory KTE 2023
 					</a>
@@ -50,10 +50,10 @@
 			<h2>Timeline</h2>
 
 			<ul class="cmb0-2">
-				<li>⦿ R&D (2018 ~)</li>
-				<li>⦿ MX1 Video Synth (2023/24)</li>
-				<li>⦿ PC Kintsugi (2024)</li>
-				<li>⦿ Open Source Toolkits (2024)</li>
+				<li>⦿&nbsp; R&D (2018 ~)</li>
+				<li>⦿&nbsp; MX1 Video Synth (2023/24)</li>
+				<li>⦿&nbsp; PC Kintsugi (2024)</li>
+				<li>⦿&nbsp; Open Source Toolkits (2024)</li>
 			</ul>
 
 			<h2>Mailing List</h2>
