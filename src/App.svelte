@@ -3,15 +3,9 @@
 
 </script>
 
-
-
-
 <main 
 
 	class="sassis flex row-center-center bright minh100vh f2 serif">
-
-
-
 	<div class="maxw28em cmb1 p1 mb2">
 		
 
@@ -30,7 +24,7 @@
 		<article class="cmb1 plr0-5">
 
 			<p>
-				<span style="font-size:2em;line-height:0.5em;margin-right:0.03em">L</span>iberated Interfaces is a human-computer agency for the experimental research & development of mixed Open Source hardware & software tools by artist / designer <a href="https://autr.tv">Autr</a>.
+				<span style="font-size:2em;line-height:0.5em;margin-right:0.03em">L</span>iberated Interfaces is a human-computer agency for the experimental research & development of mixed hardware & software tools by artist / designer <a href="https://autr.tv">Autr</a>.
 			</p>
 			<h2>News</h2>
 
@@ -50,7 +44,7 @@
 			<h2>Timeline</h2>
 
 			<ul class="cmb0-2">
-				<li>⦿&nbsp; R&D (2018 ~)</li>
+				<li>⦿&nbsp; Prototypes (2018 -)</li>
 				<li>⦿&nbsp; MX1 Video Synth (2023/24)</li>
 				<li>⦿&nbsp; PC Kintsugi (2024)</li>
 				<li>⦿&nbsp; Open Source Toolkits (2024)</li>
