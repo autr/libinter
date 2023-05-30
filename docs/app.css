@@ -1,3 +1,63 @@
+a {
+  border-bottom: 2px solid;
+}
+
+em {
+  font-style: italic!important;
+}
+
+h1,h2,h3,h4 {
+/*  color: white!important;*/
+  margin-top: 1em!important;
+  font-style: italic!important;
+}
+
+input[type=text] {
+/*  border: 1px dashed;*/
+  padding-bottom:0.1em!important;
+}
+p strong, p em {
+/*  font-style: italic;*/
+  font-weight: bold;
+}
+
+input::placeholder {
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'myfont';
+  src: url('/regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'myfont';
+  src: url('/italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'myfont';
+  src: url('/bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'myfont';
+  src: url('/bolditalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+a, .hyperlink, h1,h2,h3,h4 {
+  color: var(--color-bright)!important;
+}
+
+
 :root {
   --f0: 0.785714rem;
   --f1: 1rem;
@@ -5,20 +65,20 @@
   --f3: 1.64285rem;
   --f4: 2.071428rem;
   --f5: 2.642857rem;
-  --stroke-width: 1px;
+  --stroke-width: 2px;
   --column-spacing: 2em;
   --icon-padding: 2.2em;
   --input-padding: 0.6em 1em;
   --button-padding: 1em 3em;
-  --font: monospace;
-  --font-monospace: monospace;
-  --font-serif: serif;
-  --font-sans-serif: sans-serif;
+  --font: myfont;
+  --font-monospace: myfont;
+  --font-serif: myfont;
+  --font-sans-serif: myfont;
   --font-cursive: cursive;
   --font-slab: sans-serif;
   --font-grotesque: sans-serif;
   --font-size: 13px;
-  --line-height: 1.61803398875em;
+  --line-height: 2em;
   --bg: hsl( 200, 10%, 10% );
   --bg-pop: hsl( 200, 10%, 12% );
   --bg-sink: hsl( 200, 10%, 8% );
@@ -62,21 +122,21 @@
   --f3: 1.64285rem;
   --f4: 2.071428rem;
   --f5: 2.642857rem;
-  --stroke-width: 1px;
-  --borders: 1px;
+  --stroke-width: 2px;
+  --borders: 2px;
   --column-spacing: 2em;
   --icon-padding: 2.2em;
   --input-padding: 0.4em 0.4em;
   --button-padding: 0.4em 1em;
   --font: sans-serif;
-  --font-monospace: Ubuntu Mono, Source Code Pro, monospace;
-  --font-serif: ITC Garamond Std Book Narrow, serif;
-  --font-sans-serif: sans-serif;
-  --font-cursive: cursive;
+  --font-monospace: myfont;
+  --font-serif: myfont;
+  --font-sans-serif: myfont;
+  --font-cursive: myfont;
   --font-slab: sans-serif;
   --font-grotesque: sans-serif;
   --font-size: 13px;
-  --line-height: 1em;
+  --line-height: 1.2em;
   --bg: hsl( 250, 20%, 12% );
   --bg-pop: hsl( 250, 20%, 15% );
   --bg-popper: hsl( 250, 20%, 20% );
@@ -847,7 +907,7 @@ code[class*="language-"], pre[class*="language-"] {
 .flipx {
   transform: scale(-1, 1); }
 
-.bg, .sassis {
+.bg, .sassis, body {
   background-color: var(--bg); }
 
 .pop {
@@ -918,7 +978,9 @@ button, .button {
   .filled:after, .filled:before, button.filled:after, button.filled:before, .button.filled:after, .button.filled:before {
     border-color: var(--bg); }
 
-a:active:not(.unclickable):not(.disabled), a:active .bg, a.active:not(.unclickable):not(.disabled), a.active .bg, a.focusable:focus:not(.unclickable):not(.disabled), a.focusable:focus .bg, button:active:not(.unclickable):not(.disabled), button:active .bg, button.active:not(.unclickable):not(.disabled), button.active .bg, button.focusable:focus:not(.unclickable):not(.disabled), button.focusable:focus .bg, .clickable:active:not(.unclickable):not(.disabled), .clickable:active .bg, .clickable.active:not(.unclickable):not(.disabled), .clickable.active .bg, .clickable.focusable:focus:not(.unclickable):not(.disabled), .clickable.focusable:focus .bg, .button:active:not(.unclickable):not(.disabled), .button:active .bg, .button.active:not(.unclickable):not(.disabled), .button.active .bg, .button.focusable:focus:not(.unclickable):not(.disabled), .button.focusable:focus .bg {
+ 
+
+.hyperlink:active a, .hyperlink:focus a, a:active:not(.unclickable):not(.disabled), a:active .bg, a.active:not(.unclickable):not(.disabled), a.active .bg, a.focusable:focus:not(.unclickable):not(.disabled), a.focusable:focus .bg, button:active:not(.unclickable):not(.disabled), button:active .bg, button.active:not(.unclickable):not(.disabled), button.active .bg, button.focusable:focus:not(.unclickable):not(.disabled), button.focusable:focus .bg, .clickable:active:not(.unclickable):not(.disabled), .clickable:active .bg, .clickable.active:not(.unclickable):not(.disabled), .clickable.active .bg, .clickable.focusable:focus:not(.unclickable):not(.disabled), .clickable.focusable:focus .bg, .button:active:not(.unclickable):not(.disabled), .button:active .bg, .button.active:not(.unclickable):not(.disabled), .button.active .bg, .button.focusable:focus:not(.unclickable):not(.disabled), .button.focusable:focus .bg {
   background: var(--color);
   color: var(--bg); }
   a:active:not(.unclickable):not(.disabled) .fill, a:active .bg .fill, a.active:not(.unclickable):not(.disabled) .fill, a.active .bg .fill, a.focusable:focus:not(.unclickable):not(.disabled) .fill, a.focusable:focus .bg .fill, button:active:not(.unclickable):not(.disabled) .fill, button:active .bg .fill, button.active:not(.unclickable):not(.disabled) .fill, button.active .bg .fill, button.focusable:focus:not(.unclickable):not(.disabled) .fill, button.focusable:focus .bg .fill, .clickable:active:not(.unclickable):not(.disabled) .fill, .clickable:active .bg .fill, .clickable.active:not(.unclickable):not(.disabled) .fill, .clickable.active .bg .fill, .clickable.focusable:focus:not(.unclickable):not(.disabled) .fill, .clickable.focusable:focus .bg .fill, .button:active:not(.unclickable):not(.disabled) .fill, .button:active .bg .fill, .button.active:not(.unclickable):not(.disabled) .fill, .button.active .bg .fill, .button.focusable:focus:not(.unclickable):not(.disabled) .fill, .button.focusable:focus .bg .fill {

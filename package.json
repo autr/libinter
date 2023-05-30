@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w & pnpm run sass",
+    "dev": "rollup -c -w",
     "sass": "node-sass src/app.sass docs/app.css -w",
     "start": "sirv docs --no-clear"
   },
