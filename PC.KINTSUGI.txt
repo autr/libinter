@@ -1,0 +1,18 @@
+
+== PC Kintsugi ==
+
+Tips from video artist Autr, on upcycling bt848/878 cards:
+
+=== Multiplexing & Simultaneous Inputs ===
+
+It's easy to get confused about the number of simultaneous inputs on bttv cards. Each bt848/878 chip has 4 CVBS inputs, but they are multiplexed, and only one can be viewed at a time - so a single chip card may have 4 physical CVBS inputs, and a 4 chip card may have 16 physical CVBS inputs. When picking a card, you can simply count the number of Conexant bt848/878 chips on it to find the number of simultaneous inputs - which are quite large and hard to miss. 
+
+If the card has more than 2 chips on it, often there will be a DIN or serial-type socket for use with a break-out cable (which of course doesn't exist anymore). So some trial and error can be done to find the pin numbering: use a multimeter to find each ground pin, and then prod the rest with the tip of your CVBS cable. 
+
+When loading the driver, you must repeat the card number for each chip if you would like simultaneous inputs. For example the Geovision 800A has 4 x Conexant chips on it, so load it like so:
+
+ sudo modprobe bttv card=157,157,157,157 vbibufs=32 gbuffers=32
+
+
+Notice that the buffer size is also increased, which is helpful if you intend to capture all
+
